@@ -73,7 +73,7 @@ function VehicleStatusThread:setupStateListeners()
             end
         end)
     end
-    
+
     -- Listen for fuel changes if available
     if GetResourceState('cdn-fuel') == 'started' then
         AddStateBagChangeHandler('fuel', 'player:' .. cache.serverId, function(bagName, key, value, reserved, replicated)
@@ -81,8 +81,18 @@ function VehicleStatusThread:setupStateListeners()
                 self:updateVehicleData()
             end
         end)
+    elseif GetResourceState('ox_fuel') == 'started' then
+        AddStateBagChangeHandler('fuel', nil, function(bagName, key, value, reserved, replicated)
+            if value and self.isRunning then
+                local entity = GetEntityFromStateBagName(bagName)
+                if DoesEntityExist(entity) and entity == self.vehicle then
+                    self:updateVehicleData()
+                end
+            end
+        end)
     end
 end
+
 
 function VehicleStatusThread:cleanupStateListeners()
     -- Statebag handlers are automatically cleaned up when the resource stops
@@ -185,10 +195,13 @@ function VehicleStatusThread:updateVehicleData()
     -- Get engine health and fuel
     local engineHealth = convertEngineHealthToPercentage(GetVehicleEngineHealth(vehicle))
     local fuel = 0
-    if GetResourceState('cdn-fuel') == 'started' then
+
+    if GetResourceState('ox_fuel') == 'started' then
+        fuel = math.floor(math.max(0, math.min(Entity(vehicle).state.fuel or 0, 100)))
+    elseif GetResourceState('cdn-fuel') == 'started' then
         fuel = math.floor(math.max(0, math.min(exports['cdn-fuel']:GetFuel(vehicle), 100)))
     end
-    
+
     -- Check if state has changed significantly
     local stateChanged = false
     if self.lastSentState.speed ~= speed or 
