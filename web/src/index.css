@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("./fonts.css");
+
+@font-face {
+  font-family: "Nexa-Book";
+  src: url("https://db.onlinewebfonts.com/t/2eccf178aa2ce410df13a179ba3b3761.eot");
+  src: url("https://db.onlinewebfonts.com/t/2eccf178aa2ce410df13a179ba3b3761.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/2eccf178aa2ce410df13a179ba3b3761.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/2eccf178aa2ce410df13a179ba3b3761.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/2eccf178aa2ce410df13a179ba3b3761.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/2eccf178aa2ce410df13a179ba3b3761.svg#Nexa-Book")format("svg");
+}
+
+:root {
+  font-family: "Nexa-Book", Montserrat, Geist, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
+  font-weight: 500;
+  font-synthesis: none;
+  color-scheme: only light !important;
+  overflow: hidden !important;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: transparent !important;
+  font-synthesis: none;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  outline: none !important;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4K and high DPI display support */
+@media (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2) {
+  :root {
+    font-size: 16px; /* Ensure base font size for 4K */
+  }
+  
+  /* Ensure proper scaling for 4K displays */
+  * {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+/* Ultrawide monitor support (21/9 and wider) */
+@media (min-aspect-ratio: 21/9) {
+  :root {
+    font-size: 14px; /* Slightly smaller base font for ultrawide */
+  }
+  
+  /* Optimize spacing for ultrawide displays */
+  .ultrawide-optimized {
+    transform: scale(0.9);
+    transform-origin: left bottom;
+  }
+  
+  /* Ensure minimap is properly anchored to bottom-left corner */
+  .minimap-container {
+    left: 0 !important;
+    bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Add padding for health bars on ultrawide */
+  .health-bars-container {
+    padding-left: 6px !important;
+    margin-left: 2px !important;
+  }
+}
+
+/* 32:9 ultrawide support */
+@media (min-aspect-ratio: 32/9) {
+  :root {
+    font-size: 13px; /* Even smaller for 32:9 */
+  }
+  
+  .ultrawide-optimized {
+    transform: scale(0.85);
+    transform-origin: left bottom;
+  }
+  
+  /* Ensure minimap is properly anchored to bottom-left corner */
+  .minimap-container {
+    left: 0 !important;
+    bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Add padding for health bars on 32:9 ultrawide */
+  .health-bars-container {
+    padding-left: 8px !important;
+    margin-left: 3px !important;
+  }
+}
+
+/* Specific support for 3840x1440 ultrawide */
+@media (min-width: 3840px) and (min-height: 1440px) {
+  .ultrawide-optimized {
+    transform: scale(0.95);
+    transform-origin: left bottom;
+  }
+  
+  /* Force minimap to bottom-left corner for 3840x1440 */
+  .minimap-container {
+    left: 0 !important;
+    bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Add padding for health bars on ultrawide */
+  .health-bars-container {
+    padding-left: 8px !important;
+    margin-left: 4px !important;
+  }
+}
+
+body {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
