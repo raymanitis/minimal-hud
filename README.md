@@ -1,6 +1,6 @@
 # Minimal-HUD (Redesigned)
 
-This project is a redesigned version of the original **[minimal-hud](https://github.com/ThatMadCap/minimal-hud)** by [ThatMadCap](https://github.com/ThatMadCap).
+This project is a redesigned version of **[minimal-hud](https://github.com/ThatMadCap/minimal-hud)** by [ThatMadCap](https://github.com/ThatMadCap).
 All credit for the original concept and base work goes to them.
 
 I’ve reworked the HUD to fit my own style and preferences, with a focus on a cleaner presentation and easy customization. This release is my personal redesign while remaining respectful to the original project.
