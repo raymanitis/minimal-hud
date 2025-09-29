@@ -1,9 +1,9 @@
 # Minimal-HUD (Redesigned)
 
-This project is a redesigned version of **[minimal-hud](https://github.com/ThatMadCap/minimal-hud)** by [ThatMadCap](https://github.com/ThatMadCap).
-All credit for the original concept and base work goes to them.
+This project is a redesigned version of **[minimal-hud](https://github.com/ThatMadCap/minimal-hud)** by [ThatMadCap](https://github.com/ThatMadCap), which itself is based on the original React HUD by [vipexv](https://github.com/vipexv).
+All credit for the original work and inspiration goes to them.
 
-I’ve reworked the HUD to fit my own style and preferences, with a focus on a cleaner presentation and easy customization. This release is my personal redesign while remaining respectful to the original project.
+I took ThatMadCap’s version and reworked it to match my own style and preferences, focusing on a cleaner presentation and easier customization. This release is my personal redesign, built with respect for both original authors.
 
 ---
 
@@ -50,7 +50,8 @@ Load into your project/game and confirm the HUD displays correctly. Adjust Manti
 
 ## 🙏 Credits
 
-* Original project: **[minimal-hud](https://github.com/ThatMadCap/minimal-hud)** by [ThatMadCap](https://github.com/ThatMadCap).
-* Redesigned & modified by **[raymanitis](https://github.com/raymanitis)**.
+* Original React HUD: **[vipexv](https://github.com/vipexv)**
+* Minimal-HUD version: **[ThatMadCap](https://github.com/ThatMadCap)**
+* Redesigned & modified: **[raymanitis](https://github.com/raymanitis)**
 
-This redesign would not exist without the foundation provided by the original minimal-hud. Full respect and thanks to the original creator.
+This redesign builds on the foundation laid by both vipexv and ThatMadCap. Full respect and thanks to both creators for their work.
