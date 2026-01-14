@@ -12,6 +12,7 @@ import { isEnvBrowser } from "./utils/misc";
 import { useCompassLocationStore, useCompassAlwaysStore } from "./states/compass-location";
 import { useSkewedStyleStore, useSkewAmountStore } from "@/states/skewed-style";
 import { useSetLogoUrl } from "@/states/logo";
+import { useShowInfoPanelStore } from "@/states/info-panel";
 
 if (isEnvBrowser()) {
   const body = document.body;
@@ -29,6 +30,7 @@ export function App() {
   const [skewedStyle, setSkewedStyle] = useSkewedStyleStore();
   const [skewAmount, setSkewAmount] = useSkewAmountStore();
   const setLogoUrl = useSetLogoUrl();
+  const [showInfoPanel, setShowInfoPanel] = useShowInfoPanelStore();
 
   useNuiEvent("state::visibility::app::set", (state) => {
     const newState = state === "toggle" ? !visible : state;
@@ -48,6 +50,7 @@ export function App() {
         setCompassAlways(res.config.compassAlways);
         setSkewedStyle(res.config.useSkewedStyle);
         setSkewAmount(res.config.skewAmount);
+        setShowInfoPanel(res.config.showInfoPanel ?? true);
         if (res.config.hudLogo) {
           setLogoUrl(res.config.hudLogo);
         }
@@ -67,7 +70,7 @@ export function App() {
 
   return (
     <>
-      <TopRightInfo />
+      {showInfoPanel && <TopRightInfo />}
       <PlayerStatus />
       <CarHud />
 

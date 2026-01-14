@@ -5,5 +5,6 @@ export interface ConfigInterface {
   compassAlways: boolean;
   useSkewedStyle: boolean;
   skewAmount: number;
+  showInfoPanel: boolean;
   hudLogo?: string;
 }
