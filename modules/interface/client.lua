@@ -57,10 +57,8 @@ if not _G.interface then
             cb(true)
         end)
 
-        self:on("APP_LOADED", function(_, cb)
+        self:on("APP_LOADED", function(_, _)
             self.store.status.app.loaded = true
-            local config = require("config.shared")
-            cb(config)
             self:toggle(false) -- Hide HUD by default
         end)
     end
